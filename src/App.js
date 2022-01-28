@@ -7,9 +7,9 @@ import '@tomtom-international/web-sdk-maps/dist/maps.css'
 const App = () => {
   const mapElement = useRef()
   const [map, setMap] = useState({})
-  const [longitude, setLongitude] = useState(77.2090)
-  const [latitude, setLatitude] = useState(28.6139)
-  
+  const [longitude, setLongitude] = useState(-0.112869)
+  const [latitude, setLatitude] = useState(51.504)
+
   const convertToPoints = (lngLat) => {
     return {
       point: {
@@ -32,7 +32,7 @@ const App = () => {
         data: geoJson
       },
       paint: {
-        'line-color': 'Blue',
+        'line-color': '#4a90e2',
         'line-width': 6
   
       }
@@ -154,36 +154,34 @@ const App = () => {
 
   return (
     <>
-    <h1 className='matrix'>Matrix Routing</h1>
       {map && (
         <div className="app">
+        <h1 className='matrix'>DISTANCE MATRIX ROUTING</h1>
           <div ref={mapElement} className="map" />
-          
-            <div className="search-bar">
-              <h1 className='heading'>Where to?</h1>
-              <input
-                type="text"
-                id="longitude"
-                className="longitude"
-                placeholder="Enter Longitude"
-                onChange={(e) => {
-                  setLongitude(e.target.value)
-                }}
-              />
-              <br></br>
-              <br></br>
-              <input
-                type="text"
-                id="latitude"
-                className="latitude"
-                placeholder="Enter Latitude"
-                onChange={(e) => {
-                  setLatitude(e.target.value)
-                }}
-              />
-            </div>
+          <div className="search-bar">
+            <h1>Where to?</h1>
+            <input
+              type="text"
+              id="latitude"
+              className="latitude"
+              placeholder="Put in latitude"
+              onChange={(e) => {
+                setLatitude(e.target.value)
+              }}
+            />
+            <br/>
+            <br/>
+            <input
+              type="text"
+              id="longitude"
+              className="longitude"
+              placeholder="Put in Longitude"
+              onChange={(e) => {
+                setLongitude(e.target.value)
+              }}
+            />
           </div>
-
+        </div>
       )}
     </>
   )

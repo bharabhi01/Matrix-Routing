@@ -1,7 +1,7 @@
 body {
   display: flex;
   justify-content: center;
-  background-image: linear-gradient(whitesmoke, lightblue);
+  background-color: rgb(191, 235, 230);
 }
 
 .app {
